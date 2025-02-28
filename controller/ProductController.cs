@@ -10,11 +10,11 @@ public class ProductController : ControllerBase
         _productRepository = productRepository;
     }
     [HttpGet]
-    public async Task<IActionResult> GetProducts()
-    {
-        var products = await _productRepository.GetProductsAsync();
-        return Ok(products);
-    }
+    // public async Task<IActionResult> GetProducts()
+    // {
+    //     var products = await _productRepository.GetProductsAsync();
+    //     return Ok(products);
+    // }
 
     [HttpPost]
     public async Task<IActionResult> AddProduct(ProductDto productDto)
