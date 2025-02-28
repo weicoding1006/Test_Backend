@@ -17,9 +17,15 @@ public class ProductController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddProduct(ProductDto productDto)
+    public async Task<IActionResult> AddProduct(CreateProductDto createProductDto)
     {
-        await _productRepository.AddProductAsync(productDto);
+        await _productRepository.AddProductAsync(createProductDto);
+        return Ok();
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteProduct(Guid id)
+    {
+        await _productRepository.DeleteProductAsync(id);
         return Ok();
     }
 }
